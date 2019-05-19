@@ -1,0 +1,71 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:fragment="left_sidebar">
+    <div class="col-lg-3 col-md-3">
+        <div class="mobile-menu-left-overlay"></div>
+        <nav class="side-menu">
+            <ul>
+                <li>
+                    <a th:href="@{/dashboard}" class="active">
+                        <i class="icon-home"></i> Home
+                    </a>
+                </li>
+                <li class="title">AGENCY</li>
+                <li>
+                    <a th:href="@{/agency/add}">
+                        <i class="icon-tickets"></i>  ADD
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/agency/view}">
+                        <i class="icon-book-pencil"></i>  VIEW
+                    </a>
+                </li>
+                <li class="divider"></li>
+
+                <li class="title">NEWS</li>
+                <li>
+                    <a th:href="@{/news/add}">
+                        <i class="icon-credit-card"></i> ADD
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/news/view}">
+                        <i class="icon-credit-card"></i> VIEW
+                    </a>
+                </li>
+
+                <li class="divider"></li>
+
+                <li class="title">USER</li>
+                <li>
+                    <a th:href="@{/user/add}">
+                        <i class="icon-credit-card"></i> ADD
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/user/view}">
+                        <i class="icon-credit-card"></i> VIEW
+                    </a>
+                </li>
+
+                <li class="divider"></li>
+
+                <li class="title">REPORT</li>
+                <li>
+                    <a href="">
+                        <i class="icon-task"></i> Statements
+                    </a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a th:href="@{/logout}">
+                        <i class="icon-sign-out"></i> Sign Out
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+</th:block>
+</html>

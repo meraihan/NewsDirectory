@@ -1,0 +1,37 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+
+
+<div th:block th:fragment="foot">
+    <footer id="footer">
+        Copyright © 2018 Agrani Bank Limited
+    </footer>
+
+    <script th:src="@{/js/jquery-2.0.2.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+
+
+    <script th:src="@{/js/jquery.dataTables.min.js}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#dataTables-example').DataTable({
+                responsive: true
+            });
+        });
+
+
+        function ConfirmDelete()
+        {
+            var x = confirm("Are you sure you want to delete?");
+            if (x)
+                return true;
+            else
+                return false;
+        }
+
+    </script>
+</div>
+
+
+
+</html>

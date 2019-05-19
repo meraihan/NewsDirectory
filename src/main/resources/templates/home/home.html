@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<HTML xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{base}">
+
+<div layout:fragment="page_content">
+
+    <div class="col-lg-9 col-md-9">
+        <div class="page-head">
+            <h2 class="page-head-title">News Directory - Dashboard</h2>
+        </div>
+        <div class="row action-button" id="refreshDiv">
+
+            <div class="col-lg-6 col-md-6">
+                <a class="btn" th:href="@{/agency/view}">
+                    <i class="icon-card"></i>
+                    <span>AGENCY</span>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <a class="btn"  th:href="@{/news/view}">
+                    <i class="icon-card"></i>
+                    <span>NEWS</span>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <a class="btn"  th:href="@{/user/view}">
+                    <i class="icon-report"></i>
+                    <span>USER</span>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <a class="btn">
+                    <i class="icon-report"></i>
+                    <span>REPORT</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</HTML>
+

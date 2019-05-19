@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<HTML xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{base}">
+
+<div layout:fragment="page_content">
+
+    <div class="col-lg-9 col-md-9">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="panel panel-default ticket-entry">
+                    <div class="panel-heading">
+                        Edit Agency
+                    </div>
+                    <!--<div th:fragment="message">-->
+                        <div class="container">
+                            <div class="row">
+                                <div class="span12">
+                                    <div th:if="${success != null}">
+                                        <div class="alert alert-success">
+                                            <strong th:text="${success}"></strong>
+                                        </div>
+                                    </div>
+                                    <div th:if="${error != null}">
+                                        <div class="alert alert-danger">
+                                            <strong th:text="${error}"></strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!--</div>-->
+                    <div class="panel-body">
+                            <form action="#" role="form" th:object="${singleAgency}"
+                                  th:action="@{/agency/edit}" method="POST">
+                            <input type="hidden" class="form-control" th:value="${singleAgency.id}"
+                                   name="id"/>
+
+                            <div class="form-group">
+                                <label>Agency Name</label>
+                                <input type="text" name="agencyName" th:field="*{agencyName}" placeholder="Agency Name"
+                                       required="true" class="form-control"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Description</label>
+                                <input type="text" name="description" th:field="*{description}" placeholder="Description"
+                                       required="true" class="form-control"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Agency Type</label>
+                                <select class="form-control" name="agencyType" th:field="*{agencyType}" required="true">
+                                    <div>
+                                        <option value="">--SELECT--</option>
+                                        <option value="DAILY">DAILY</option>
+                                        <option value="WEEKLY">WEEKLY</option>
+                                        <option value="FORTNIGHT">FORTNIGHT</option>
+                                        <option value="MONTHLY">MONTHLY</option>
+                                        <option value="OTHERS">OTHERS</option>
+                                    </div>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</HTML>
+

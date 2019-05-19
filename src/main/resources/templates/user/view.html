@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<HTML xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{base}">
+
+<div layout:fragment="page_content">
+    <div class="col-lg-9 col-md-9">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="panel panel-default ticket-entry">
+                    <div class="panel-heading">
+                        User List
+                    </div>
+
+                    <div class="panel-body">
+                        <table class="table display table-bordered table-striped table-hover"
+                               id="dataTables-example">
+                            <thead>
+                            <tr>
+                                <th>Sl</th>
+                                <th>FullName</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Gender</th>
+                                <th>Phone</th>
+                                <th>email</th>
+                                <th>Edit</th>
+                                <!--<th>Delete</th>-->
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="user,iterationStatus : ${userList}">
+                                <td th:text="${iterationStatus.count}">1</td>
+                                <td th:text="${user.fullName}"></td>
+                                <td th:text="${user.role.name}"></td>
+                                <td>
+                                    <div th:if="${user.isActive==true}">ACTIVE</div>
+                                    <div th:if="${user.isActive==false}">INACTIVE</div>
+                                </td>
+                                <td th:text="${user.gender}"></td>
+                                <td th:text="${user.phone}"></td>
+                                <td th:text="${user.email}"></td>
+                                <td class="center">&nbsp;&nbsp;&nbsp;
+                                    <a th:href="@{/user/edit(id=${user.id})}"><i
+                                            class="glyphicon-edit"></i></a>
+                                </td>
+                                <!--<td class="center">&nbsp;&nbsp;&nbsp;-->
+                                    <!--<a th:href="@{/user/delete(id=${user.id})}"><i-->
+                                            <!--class="glyphicon-edit"></i></a>-->
+                                <!--</td>-->
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</HTML>
+

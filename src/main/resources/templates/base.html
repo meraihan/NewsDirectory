@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <th:block th:replace="fragments/header :: head"></th:block>
+</head>
+<body>
+<th:block th:replace="fragments/header :: navbar"></th:block>
+<div id="wrapper">
+    <div class="main-content">
+        <div class="container">
+            <div class="row">
+                <th:block th:replace="fragments/left_sidebar :: left_sidebar"></th:block>
+                <div layout:fragment="page_content" id="content-wrapper"></div>
+            </div>
+        </div>
+        <th:block th:replace="fragments/footer :: foot"></th:block>
+    </div>
+</div>
+</body>
+</html>

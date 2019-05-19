@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<HTML xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{base}">
+
+<div layout:fragment="page_content">
+    <div class="col-lg-9 col-md-9">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="panel panel-default ticket-entry">
+                    <div class="panel-heading">
+                        News List
+                    </div>
+
+                    <div class="panel-body">
+                        <table class="table display table-bordered table-striped table-hover"
+                               id="dataTables-example">
+                            <thead>
+                            <tr>
+                                <th>Sl</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Amount</th>
+                                <th>Agency</th>
+                                <th>Status</th>
+                                <th>Quantity</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="news,iterationStatus : ${newsList}">
+                                <td th:text="${iterationStatus.count}">1</td>
+                                <td th:text="${news.title}"></td>
+                                <td th:text="${news.description}"></td>
+                                <td th:text="${news.amount}"></td>
+                                <td th:text="${news.agency.agencyName}"></td>
+                                <td th:text="${news.status}"></td>
+                                <td th:text="${news.quantity}"></td>
+                                <td class="center">&nbsp;&nbsp;&nbsp;
+                                    <a th:href="@{/news/edit(id=${news.id})}"><i
+                                            class="glyphicon-edit"></i></a>
+                                </td>
+                                <td class="center">&nbsp;&nbsp;&nbsp;
+                                    <a th:href="@{/news/delete(id=${news.id})}"><i
+                                            class="glyphicon-edit"></i></a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</HTML>
+
